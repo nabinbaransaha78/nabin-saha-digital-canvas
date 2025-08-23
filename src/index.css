@@ -141,15 +141,36 @@ All colors MUST be HSL.
   }
   
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
   }
   
   .animate-fade-in-up {
-    animation: fadeInUp 0.8s var(--animation-smooth) forwards;
+    animation: fadeInUp 1s var(--animation-smooth) forwards;
   }
   
   .animate-scale-in {
-    animation: scaleIn 0.6s var(--animation-bounce) forwards;
+    animation: scaleIn 0.8s var(--animation-bounce) forwards;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 1s var(--animation-smooth) forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 1s var(--animation-smooth) forwards;
+  }
+  
+  .animate-text-reveal {
+    animation: textReveal 1.2s var(--animation-bounce) forwards;
+  }
+  
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
   }
 }
 
@@ -160,14 +181,15 @@ All colors MUST be HSL.
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -178,10 +200,55 @@ All colors MUST be HSL.
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
 }

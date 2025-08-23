@@ -72,8 +72,13 @@ export default {
 				xs: '2px',
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				heading: ['Poppins', 'system-ui', 'sans-serif'],
+				sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+				heading: ['Playfair Display', 'Georgia', 'serif'],
+				display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+			},
+			fontSize: {
+				'hero': ['clamp(3rem, 8vw, 7rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+				'hero-sub': ['clamp(1.25rem, 3vw, 2rem)', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
