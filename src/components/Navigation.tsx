@@ -71,12 +71,12 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 glass-card rounded-lg p-4 animate-fade-in-up">
+          <div className="md:hidden mt-4 glass-card rounded-lg p-4 animate-fade-in-up absolute left-4 right-4 top-full bg-background/95 backdrop-blur-md border border-primary/10 shadow-xl z-50">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors duration-200"
+                className="block w-full text-left py-3 px-2 text-foreground hover:text-primary hover:bg-primary/5 rounded-md transition-all duration-200"
               >
                 {item.name}
               </button>

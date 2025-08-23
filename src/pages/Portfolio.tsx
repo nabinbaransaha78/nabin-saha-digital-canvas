@@ -17,9 +17,9 @@ const Portfolio = () => {
         <ContactSection />
       </main>
       
-      <footer className="py-8 border-t border-primary/10">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-muted-foreground">
+      <footer className="py-6 sm:py-8 border-t border-primary/10">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
+          <p className="text-muted-foreground text-sm sm:text-base">
             © 2024 Nabin Baran Saha. Built with passion for excellence.
           </p>
         </div>
