@@ -58,48 +58,48 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-20 relative">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section id="contact" className="py-20 relative">
+      <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-4">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="font-heading font-bold text-4xl md:text-5xl mb-4">
               Let's <span className="text-gradient">Connect</span>
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Ready to discuss opportunities, collaborations, or just have a conversation about business and innovation
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
+          <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div className="space-y-6 sm:space-y-8 animate-fade-in-up order-2 lg:order-1">
+            <div className="space-y-8 animate-fade-in-up">
               <div>
-                <h3 className="font-heading font-bold text-xl sm:text-2xl mb-4 sm:mb-6">Get in Touch</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
+                <h3 className="font-heading font-bold text-2xl mb-6">Get in Touch</h3>
+                <p className="text-muted-foreground leading-relaxed mb-8">
                   I'm always open to discussing new opportunities, business ideas, or potential collaborations. 
                   Whether you're a recruiter, fellow student, or business professional, I'd love to hear from you.
                 </p>
               </div>
 
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <Card 
                     key={index} 
                     className="glass-card border-primary/10 hover:border-primary/30 transition-all duration-300 group"
                   >
-                    <CardContent className="p-4 sm:p-6">
+                    <CardContent className="p-6">
                       <a 
                         href={info.href}
                         target={info.icon === Linkedin ? '_blank' : undefined}
                         rel={info.icon === Linkedin ? 'noopener noreferrer' : undefined}
-                        className="flex items-center gap-3 sm:gap-4 group-hover:text-primary transition-colors duration-200"
+                        className="flex items-center gap-4 group-hover:text-primary transition-colors duration-200"
                       >
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200 flex-shrink-0">
-                          <info.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
+                        <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                          <info.icon className="h-6 w-6 text-primary-foreground" />
                         </div>
-                        <div className="min-w-0 flex-1">
-                          <p className="font-semibold text-sm sm:text-base">{info.label}</p>
-                          <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-primary transition-colors duration-200 truncate">
+                        <div>
+                          <p className="font-semibold">{info.label}</p>
+                          <p className="text-muted-foreground group-hover:text-primary transition-colors duration-200">
                             {info.value}
                           </p>
                         </div>
@@ -111,9 +111,9 @@ const ContactSection = () => {
 
               {/* Quick Stats */}
               <Card className="glass-card border-primary/10">
-                <CardContent className="p-4 sm:p-6">
-                  <h4 className="font-heading font-semibold text-base sm:text-lg mb-3 sm:mb-4">Quick Facts</h4>
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
+                <CardContent className="p-6">
+                  <h4 className="font-heading font-semibold text-lg mb-4">Quick Facts</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <p className="font-semibold text-primary">Location</p>
                       <p className="text-muted-foreground">India</p>
@@ -136,13 +136,13 @@ const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <Card className="glass-card border-primary/10 animate-fade-in-up order-1 lg:order-2" style={{ animationDelay: '0.2s' }}>
-              <CardContent className="p-4 sm:p-6 lg:p-8">
-                <h3 className="font-heading font-bold text-xl sm:text-2xl mb-4 sm:mb-6">Send a Message</h3>
+            <Card className="glass-card border-primary/10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <CardContent className="p-8">
+                <h3 className="font-heading font-bold text-2xl mb-6">Send a Message</h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-xs sm:text-sm font-medium mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Full Name *
                     </label>
                     <Input
@@ -153,12 +153,12 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your full name"
-                      className="bg-background/50 border-primary/20 focus:border-primary text-sm"
+                      className="bg-background/50 border-primary/20 focus:border-primary"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-xs sm:text-sm font-medium mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">
                       Email Address *
                     </label>
                     <Input
@@ -169,12 +169,12 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your.email@example.com"
-                      className="bg-background/50 border-primary/20 focus:border-primary text-sm"
+                      className="bg-background/50 border-primary/20 focus:border-primary"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-xs sm:text-sm font-medium mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium mb-2">
                       Message *
                     </label>
                     <Textarea
@@ -184,15 +184,15 @@ const ContactSection = () => {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell me about the opportunity, your company, or what you'd like to discuss..."
-                      rows={4}
-                      className="bg-background/50 border-primary/20 focus:border-primary resize-none text-sm"
+                      rows={5}
+                      className="bg-background/50 border-primary/20 focus:border-primary resize-none"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full group relative overflow-hidden glow-effect hover:glow-effect transition-all duration-300 bg-primary hover:bg-primary/90 text-primary-foreground py-2.5 sm:py-3 text-sm sm:text-base"
+                    className="w-full group relative overflow-hidden glow-effect hover:glow-effect transition-all duration-300 bg-primary hover:bg-primary/90 text-primary-foreground"
                   >
                     {isSubmitting ? (
                       <>
@@ -209,12 +209,12 @@ const ContactSection = () => {
                   </Button>
                 </form>
 
-                <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-primary/5 border border-primary/10 rounded-lg">
-                  <div className="flex items-center gap-2 text-xs sm:text-sm text-primary">
-                    <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                <div className="mt-6 p-4 bg-primary/5 border border-primary/10 rounded-lg">
+                  <div className="flex items-center gap-2 text-sm text-primary">
+                    <CheckCircle className="h-4 w-4" />
                     <span className="font-medium">Professional Inquiries Welcome</span>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                  <p className="text-xs text-muted-foreground mt-1">
                     Recruiters, business partners, and collaboration opportunities are especially encouraged to reach out.
                   </p>
                 </div>

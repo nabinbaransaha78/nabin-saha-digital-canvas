@@ -77,38 +77,38 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-12 sm:py-20 relative">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section id="skills" className="py-20 relative">
+      <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-4">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="font-heading font-bold text-4xl md:text-5xl mb-4">
               Key <span className="text-gradient">Skills</span>
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Comprehensive skill set built through academic excellence and practical experience
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
               <Card 
                 key={index} 
                 className="glass-card border-primary/10 hover:border-primary/30 transition-all duration-300 group animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-start space-x-3 sm:space-x-4">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-                        <skill.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
+                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                        <skill.icon className="h-6 w-6 text-primary-foreground" />
                       </div>
                     </div>
                     
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-heading font-semibold text-base sm:text-lg mb-2 group-hover:text-primary transition-colors duration-200 leading-tight">
+                      <h3 className="font-heading font-semibold text-lg mb-2 group-hover:text-primary transition-colors duration-200">
                         {skill.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 leading-relaxed">
+                      <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                         {skill.description}
                       </p>
                       
