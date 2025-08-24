@@ -46,7 +46,7 @@ const AboutSection = () => {
                   <img 
                     src="/lovable-uploads/8478258c-55fe-4492-bd5b-47e4ac461713.png" 
                     alt="Nabin Baran Saha - Professional headshot"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-contain rounded-2xl"
                   />
                 </div>
               </div>
