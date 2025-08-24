@@ -5,7 +5,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, Linkedin, Send, CheckCircle } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
-
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,28 +12,22 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'nabinbaransaha78@gmail.com',
-      href: 'mailto:nabinbaransaha78@gmail.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+91 8536812927',
-      href: 'tel:+918536812927'
-    },
-    {
-      icon: Linkedin,
-      label: 'LinkedIn',
-      value: 'Nabin Baran Saha',
-      href: 'https://www.linkedin.com/in/nabin-baran-saha-b13425380'
-    }
-  ];
-
+  const contactInfo = [{
+    icon: Mail,
+    label: 'Email',
+    value: 'nabinbaransaha78@gmail.com',
+    href: 'mailto:nabinbaransaha78@gmail.com'
+  }, {
+    icon: Phone,
+    label: 'Phone',
+    value: '+91 8536812927',
+    href: 'tel:+918536812927'
+  }, {
+    icon: Linkedin,
+    label: 'LinkedIn',
+    value: 'Nabin Baran Saha',
+    href: 'https://www.linkedin.com/in/nabin-baran-saha-b13425380'
+  }];
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -43,22 +36,23 @@ const ContactSection = () => {
     setTimeout(() => {
       toast({
         title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        description: "Thank you for reaching out. I'll get back to you soon."
       });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
       setIsSubmitting(false);
     }, 1000);
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
   };
-
-  return (
-    <section id="contact" className="py-12 sm:py-20 relative">
+  return <section id="contact" className="py-12 sm:py-20 relative">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
@@ -82,18 +76,9 @@ const ContactSection = () => {
               </div>
 
               <div className="space-y-3 sm:space-y-4">
-                {contactInfo.map((info, index) => (
-                  <Card 
-                    key={index} 
-                    className="glass-card border-primary/10 hover:border-primary/30 transition-all duration-300 group"
-                  >
+                {contactInfo.map((info, index) => <Card key={index} className="glass-card border-primary/10 hover:border-primary/30 transition-all duration-300 group">
                     <CardContent className="p-4 sm:p-6">
-                      <a 
-                        href={info.href}
-                        target={info.icon === Linkedin ? '_blank' : undefined}
-                        rel={info.icon === Linkedin ? 'noopener noreferrer' : undefined}
-                        className="flex items-center gap-3 sm:gap-4 group-hover:text-primary transition-colors duration-200"
-                      >
+                      <a href={info.href} target={info.icon === Linkedin ? '_blank' : undefined} rel={info.icon === Linkedin ? 'noopener noreferrer' : undefined} className="flex items-center gap-3 sm:gap-4 group-hover:text-primary transition-colors duration-200">
                         <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200 flex-shrink-0">
                           <info.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
                         </div>
@@ -105,8 +90,7 @@ const ContactSection = () => {
                         </div>
                       </a>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
 
               {/* Quick Stats */}
@@ -128,7 +112,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-primary">Languages</p>
-                      <p className="text-muted-foreground">English, Hindi</p>
+                      <p className="text-muted-foreground">English, Hindi, Bengali</p>
                     </div>
                   </div>
                 </CardContent>
@@ -136,7 +120,9 @@ const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <Card className="glass-card border-primary/10 animate-fade-in-up order-1 lg:order-2" style={{ animationDelay: '0.2s' }}>
+            <Card className="glass-card border-primary/10 animate-fade-in-up order-1 lg:order-2" style={{
+            animationDelay: '0.2s'
+          }}>
               <CardContent className="p-4 sm:p-6 lg:p-8">
                 <h3 className="font-heading font-bold text-xl sm:text-2xl mb-4 sm:mb-6">Send a Message</h3>
                 
@@ -145,66 +131,31 @@ const ContactSection = () => {
                     <label htmlFor="name" className="block text-xs sm:text-sm font-medium mb-2">
                       Full Name *
                     </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your full name"
-                      className="bg-background/50 border-primary/20 focus:border-primary text-sm"
-                    />
+                    <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} placeholder="Your full name" className="bg-background/50 border-primary/20 focus:border-primary text-sm" />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-xs sm:text-sm font-medium mb-2">
                       Email Address *
                     </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="your.email@example.com"
-                      className="bg-background/50 border-primary/20 focus:border-primary text-sm"
-                    />
+                    <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="your.email@example.com" className="bg-background/50 border-primary/20 focus:border-primary text-sm" />
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-xs sm:text-sm font-medium mb-2">
                       Message *
                     </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell me about the opportunity, your company, or what you'd like to discuss..."
-                      rows={4}
-                      className="bg-background/50 border-primary/20 focus:border-primary resize-none text-sm"
-                    />
+                    <Textarea id="message" name="message" required value={formData.message} onChange={handleChange} placeholder="Tell me about the opportunity, your company, or what you'd like to discuss..." rows={4} className="bg-background/50 border-primary/20 focus:border-primary resize-none text-sm" />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="w-full group relative overflow-hidden glow-effect hover:glow-effect transition-all duration-300 bg-primary hover:bg-primary/90 text-primary-foreground py-2.5 sm:py-3 text-sm sm:text-base"
-                  >
-                    {isSubmitting ? (
-                      <>
+                  <Button type="submit" disabled={isSubmitting} className="w-full group relative overflow-hidden glow-effect hover:glow-effect transition-all duration-300 bg-primary hover:bg-primary/90 text-primary-foreground py-2.5 sm:py-3 text-sm sm:text-base">
+                    {isSubmitting ? <>
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-foreground mr-2" />
                         Sending...
-                      </>
-                    ) : (
-                      <>
+                      </> : <>
                         <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                         Send Message
-                      </>
-                    )}
+                      </>}
                     <div className="absolute inset-0 -z-10 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </Button>
                 </form>
@@ -223,8 +174,6 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
