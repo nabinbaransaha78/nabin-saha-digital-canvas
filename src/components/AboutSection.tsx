@@ -43,12 +43,11 @@ const AboutSection = () => {
             <div className="relative animate-scale-in order-2 lg:order-1">
               <div className="glass-card p-4 sm:p-8 rounded-2xl max-w-sm sm:max-w-md mx-auto">
                 <div className="aspect-square bg-gradient-primary rounded-2xl flex items-center justify-center">
-                  <div className="w-full h-full bg-muted rounded-2xl flex items-center justify-center">
-                    <p className="text-muted-foreground text-xs sm:text-sm text-center px-4">
-                      Profile photo will be displayed here<br />
-                      <span className="text-xs">(Please upload your professional headshot)</span>
-                    </p>
-                  </div>
+                  <img 
+                    src="/lovable-uploads/8478258c-55fe-4492-bd5b-47e4ac461713.png" 
+                    alt="Nabin Baran Saha - Professional headshot"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
                 </div>
               </div>
               
