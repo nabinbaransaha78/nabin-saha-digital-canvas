@@ -42,11 +42,11 @@ const AboutSection = () => {
             {/* Profile Image */}
             <div className="relative animate-scale-in order-2 lg:order-1">
               <div className="glass-card p-4 sm:p-8 rounded-2xl max-w-sm sm:max-w-md mx-auto">
-                <div className="aspect-square bg-gradient-primary rounded-2xl flex items-center justify-center">
+                <div className="bg-gradient-primary rounded-2xl p-1 max-w-sm sm:max-w-md mx-auto">
                   <img 
                     src="/lovable-uploads/8478258c-55fe-4492-bd5b-47e4ac461713.png" 
                     alt="Nabin Baran Saha - Professional headshot"
-                    className="w-full h-full object-contain rounded-2xl"
+                    className="w-full h-auto rounded-2xl"
                   />
                 </div>
               </div>
